@@ -1,31 +1,24 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../../../share/model/user';
-import { USERS } from '../../../share/mock/mock-users';
-
+import { UserService } from '../user.service';
 @Component({
   selector: 'app-users',
   templateUrl: './users.component.html',
   styleUrls: ['./users.component.css']
 })
 export class UsersComponent implements OnInit {
-  user: User = {
-    id: 1,
-    name: 'root'
-  };
-  users = USERS;
-  selectedUser: User;
+  users: User[];
 
+  constructor(private userService: UserService) { }
 
-
-
-  constructor() { }
-  
   ngOnInit() {
+    this.getUsers();
   }
 
-  onSelect(user: User): void {
-    this.selectedUser = user;
-  } 
+
+  getUsers(): void{
+    this.userService.getUsers().subscribe(users => this.users = users);
+  }
 
 
 

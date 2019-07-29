@@ -1,13 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { UsersComponent } from './users/users.component';
-import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
+import { FormsModule } from '@angular/forms';
+import { UserDetailComponent } from './user-detail/user-detail.component';
+import { DashboardComponent } from './dashboard/dashboard.component'; // <-- NgModel lives here
+import { AppRoutingModule } from '../../app-routing.module';
 
 @NgModule({
-  declarations: [UsersComponent],
+  declarations: [UsersComponent, UserDetailComponent, DashboardComponent],
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
   exports: [
     UsersComponent
