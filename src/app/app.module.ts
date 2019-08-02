@@ -8,6 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule }    from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './in-memory-data.service';
+import { PublimovilModule } from './module/publimovil/publimovil.module';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { InMemoryDataService }  from './in-memory-data.service';
   imports: [
     BrowserModule,
     ExampleModule,
+    PublimovilModule,
     AppRoutingModule,
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(
